@@ -1,0 +1,35 @@
+<?php
+
+$LOCALE['deDE'] = [
+    'icons' => [
+        1  => 'Krieger',
+        2  => 'Paladin',
+        3  => 'Jäger',
+        4  => 'Schurke',
+        5  => 'Priester',
+        6  => 'Todesritter',
+        7  => 'Schamane',
+        8  => 'Magier',
+        9  => 'Hexenmeister',
+        10 => 'Mönch',
+        11 => 'Druide',
+        12 => 'Dämonenjäger',
+        13 => 'Star',
+		14 => 'Circle',
+		15 => 'Diamond',
+		16 => 'Triangle',
+		17 => 'Moon',
+		18 => 'Square',
+		19 => 'Cross',
+		20 => 'Skull',
+    ],
+
+    'Uldir_1' => 'Der Niedergang',
+    'Uldir_2' => 'Halle der Reinigung',
+    'Uldir_3' => 'Ring der Eindämmung',
+    'Uldir_4' => 'Archiv der Ewigkeit',
+    'Uldir_5' => 'Seuchenkammer',
+    'Uldir_6' => 'Galerie der Fehlschläge',
+    'Uldir_7' => 'Das Tor ins Vergessen',
+    'Uldir_8' => 'Der Wuchernde Kern',
+];

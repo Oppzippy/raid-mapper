@@ -1,0 +1,33 @@
+{
+  "name": "raid-mapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/Oppzippy/raid-mapper.git"
+  },
+  "author": "Oppzippy",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/Oppzippy/raid-mapper#readme",
+  "dependencies": {
+    "compressjs": "^1.0.3",
+    "file-saver": "^2.0.0",
+    "pako": "^1.0.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-preset-minify": "^0.5.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "exorcist": "^1.0.1"
+  }
+}

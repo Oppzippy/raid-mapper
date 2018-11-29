@@ -1,0 +1,51 @@
+header {
+	padding: 5px;
+}
+
+body, html {
+	margin: 0px;
+}
+
+.settings {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.setting {
+	min-width: 10%;
+	max-width: 100%;
+	display: inline;
+}
+
+.resource {
+	display: none;
+}
+
+.canvas-container {
+	text-align: center;
+}
+
+#language-settings {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+header {
+	background-color: #F0F0F0;
+}
+
+header input, header select {
+	margin-right: 10px;
+
+}
+
+#icon-size {
+	width: 50px;
+}

@@ -1,0 +1,1 @@
+convert icons/*.png +append ../public/sprites.png
