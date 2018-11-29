@@ -14,6 +14,7 @@ class State {
 		MicroEvent.mixin(this);
 		const state = this;
 
+		// Desktop
 		canvas.addEventListener("mousedown", (e) => {
 			if (e.button === 0) { // Left click
 				state.dragSelection = state.getSelection(e.offsetX, e.offsetY);
@@ -41,6 +42,34 @@ class State {
 				dragSelection.setPosition(e.offsetX - halfSize, e.offsetY - halfSize);
 			}
 		});
+		// Mobile
+		canvas.addEventListener("touchstart", (e) => {
+			const x = e.touches[0].clientX - e.target.offsetLeft;
+			const y = e.touches[0].clientY - e.target.offsetTop;
+
+			state.dragSelection = state.getSelection(x, y);
+			state.setSelection(state.dragSelection);
+			this.trigger("move-start", state.dragSelection);
+		});
+
+		canvas.addEventListener("touchend", (e) => {
+			if (state.dragSelection) {
+				state.dragSelection = null;
+				e.preventDefault();
+			}
+		});
+
+		canvas.addEventListener("touchmove", (e) => {
+			const dragSelection = state.dragSelection;
+			if (dragSelection !== null) {
+				const x = e.touches[0].clientX - e.target.offsetLeft;
+				const y = e.touches[0].clientY - e.target.offsetTop;
+				const halfSize = dragSelection.getSize() / 2;
+				dragSelection.setPosition(x - halfSize, y - halfSize);
+				e.preventDefault();
+			}
+		});
+
 	}
 
 	setSelection(selection) {
