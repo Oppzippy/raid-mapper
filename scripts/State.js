@@ -69,7 +69,6 @@ class State {
 				e.preventDefault();
 			}
 		});
-
 	}
 
 	setSelection(selection) {
