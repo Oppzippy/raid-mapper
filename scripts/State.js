@@ -94,8 +94,10 @@ class State {
 	}
 
 	draw() {
-		this.context.drawImage(this.map, 0, 0);
-
+		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		if (this.map.complete) {
+			this.context.drawImage(this.map, 0, 0);
+		}
 		const state = this;
 		this.icons.forEach((icon) => {
 			if (icon === state.selection) {

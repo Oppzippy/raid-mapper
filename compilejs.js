@@ -5,7 +5,7 @@ const exorcist = require("exorcist");
 browserify("./scripts/Main.js", { debug: true })
 	.transform("babelify", {
 		presets: [["@babel/preset-env", {
-			targets: "> 10%",
+			targets: ">0.10%",
 		}], ["minify", {
 			builtIns: false,
 		}]],
