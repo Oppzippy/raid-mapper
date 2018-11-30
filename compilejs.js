@@ -4,10 +4,15 @@ const exorcist = require("exorcist");
 
 browserify("./scripts/Main.js", { debug: true })
 	.transform("babelify", {
-		presets: ["@babel/preset-env"],
+		presets: [["@babel/preset-env", {
+			targets: "> 10%",
+		}], ["minify", {
+			builtIns: false,
+		}]],
 		comments: false,
 		inputSourceMap: true,
-		sourceMaps: "both",
+		global: true,
+		sourceMaps: "inline",
 	})
 	.bundle()
 	.pipe(exorcist("./public/scripts/bundle.min.js.map"))
