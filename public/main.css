@@ -7,7 +7,6 @@ body, html {
 }
 
 .settings {
-	align-items: center;
 	justify-content: center;
 	display: flex;
 	flex-direction: row;
@@ -17,9 +16,17 @@ body, html {
 	margin-right: auto;
 }
 
+@media (max-width: 450px) {
+	.settings {
+		display: block;
+	}
+	.setting input, .setting select {
+		width: 100%;
+	}
+}
+
 .setting {
-	min-width: 10%;
-	max-width: 100%;
+	padding: 5px;
 	display: inline;
 }
 
@@ -39,13 +46,4 @@ body, html {
 
 header {
 	background-color: #F0F0F0;
-}
-
-header input, header select {
-	margin-right: 10px;
-
-}
-
-#icon-size {
-	width: 50px;
 }
