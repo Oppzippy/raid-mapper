@@ -17,7 +17,7 @@
 		<label for="map-select"><?= $locale->get('map') ?></label>
 		<select id="map-select">
 			<?php for ($i = 1; $i <= 10; $i++): ?>
-				<option value="uldir_<?= $i ?>"><?= $locale->get("Uldir_$i") ?></option>
+				<option value="uldir_<?= $i ?>"><?= $locale->get("uldir_$i") ?></option>
 			<?php endfor; ?>
 		</select>
 	</div>
