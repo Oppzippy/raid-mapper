@@ -8,9 +8,9 @@
 	<div class="setting">
 		<label for="icon"><?= $locale->get('icon') ?></label>
 		<select id="icon">
-			<?php foreach ($locale->get('icons') as $id => $className): ?>
-				<option value="<?= $id ?>"><?= $className ?></option>
-			<?php endforeach; ?>
+			<?php for ($i = 1; $i <= 20; $i++): ?>
+				<option value="<?= $i ?>"><?= $locale->get('icon_' . $i) ?></option>
+			<?php endfor; ?>
 		</select>
 	</div>
 	<div class="setting">

@@ -1,29 +1,26 @@
 <?php
 
 $LOCALE['deDE'] = [
-    'icons' => [
-        1  => 'Krieger',
-        2  => 'Paladin',
-        3  => 'Jäger',
-        4  => 'Schurke',
-        5  => 'Priester',
-        6  => 'Todesritter',
-        7  => 'Schamane',
-        8  => 'Magier',
-        9  => 'Hexenmeister',
-        10 => 'Mönch',
-        11 => 'Druide',
-        12 => 'Dämonenjäger',
-        13 => 'Star',
-		14 => 'Circle',
-		15 => 'Diamond',
-		16 => 'Triangle',
-		17 => 'Moon',
-		18 => 'Square',
-		19 => 'Cross',
-		20 => 'Skull',
-    ],
-
+    'icon_1' => 'Krieger', // Warrior
+    'icon_2' => 'Paladin', // Paladin
+    'icon_3' => 'Jäger', // Hunter
+    'icon_4' => 'Schurke', // Rogue
+    'icon_5' => 'Priester', // Priest
+    'icon_6' => 'Todesritter', // Death Knight
+    'icon_7' => 'Schamane', // Shaman
+    'icon_8' => 'Magier', // Mage
+    'icon_9' => 'Hexenmeister', // Warlock
+    'icon_10' => 'Mönch', // Monk
+    'icon_11' => 'Druide', // Druid
+    'icon_12' => 'Dämonenjäger', // Demon Hunter
+    'icon_13' => 'Star', // Star
+	'icon_14' => 'Circle', // Circle
+	'icon_15' => 'Diamond', // Diamond
+	'icon_16' => 'Triangle', // Triangle
+	'icon_17' => 'Moon', // Moon
+	'icon_18' => 'Square', // Square
+	'icon_19' => 'Cross', // Cross
+	'icon_20' => 'Skull', // Skull
     'Uldir_1' => 'Der Niedergang',
     'Uldir_2' => 'Halle der Reinigung',
     'Uldir_3' => 'Ring der Eindämmung',
