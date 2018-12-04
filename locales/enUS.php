@@ -27,6 +27,7 @@ $LOCALE['enUS'] = [
 	'icon_24' => 'Boss', // Boss
 	'icon_25' => 'Add', // Add
 	'title' => 'Raid Mapper',
+	'description' => 'Plan your raid positioning',
 	'name' => 'Name',
 	'icon' => 'Icon',
 	'create' => 'Create',
