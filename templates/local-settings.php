@@ -8,7 +8,7 @@
 	<div class="setting">
 		<label for="icon"><?= $locale->get('icon') ?></label>
 		<select id="icon">
-			<?php for ($i = 1; $i <= 20; $i++): ?>
+			<?php for ($i = 1; $i <= 25; $i++): ?>
 				<option value="<?= $i ?>"><?= $locale->get('icon_' . $i) ?></option>
 			<?php endfor; ?>
 		</select>
