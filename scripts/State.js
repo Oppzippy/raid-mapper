@@ -115,9 +115,8 @@ class State {
 		const radius = icon.getSize() / 2;
 
 		const gradient = this.context.createRadialGradient(x, y, radius * 0.9, x, y, radius * 1.4);
-
-		gradient.addColorStop(0, "#FF0000FF");
-		gradient.addColorStop(1, "#FF000000");
+		gradient.addColorStop(0, "rgba(255, 0, 0, 1)");
+		gradient.addColorStop(1, "rgba(255, 0, 0, 0)");
 
 		this.context.fillStyle = gradient;
 		this.context.fillRect(x - radius * 2, y - radius * 2, radius * 4, radius * 4);
