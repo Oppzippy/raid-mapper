@@ -34,8 +34,13 @@ body, html {
 	display: none;
 }
 
-.canvas-container {
+.centered-container {
 	text-align: center;
+}
+
+.instructions {
+	display: inline-block;
+	text-align: left;
 }
 
 #language-settings {

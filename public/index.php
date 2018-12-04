@@ -19,8 +19,14 @@ $locale = new Locale($LOCALE, $_GET['locale']);
 
 		<?= include '../templates/settings.php' ?>
 
-		<div class="canvas-container">
+		<div class="centered-container">
 			<canvas id="canvas" width="100" oncontextmenu="return false;"></canvas>
+		</div>
+		<div class="centered-container">
+			<ul class="instructions">
+				<li><?= $locale->get('instructions_move') ?></li>
+				<li><?= $locale->get('instructions_select') ?></li>
+			</ul>
 		</div>
 		<script src="scripts/bundle.min.js"></script>
 	</body>
