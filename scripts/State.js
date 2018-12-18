@@ -12,6 +12,7 @@ class State {
 		this.dragSelection = null;
 		this.selection = null;
 		this.prevFrameTime = 0;
+		this.changed = true;
 		MicroEvent.mixin(this);
 		const state = this;
 
