@@ -115,15 +115,6 @@ class State {
 			}
 			icon.draw(this.context);
 		});
-
-		// FPS counter
-		const time = window.performance.now();
-		const fps = 1 / ((time - this.prevFrameTime) / 1000);
-		this.prevFrameTime = time;
-		this.context.font = "16px Arial";
-		this.context.fillStyle = "white";
-		this.context.textAlign = "left";
-		this.context.fillText(Math.round(fps), 50, 50);
 		this.changed = false;
 	}
 
