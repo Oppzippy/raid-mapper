@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	setInterval(() => {
 		state.draw();
-	}, 1 / 60 * 1000);
+	}, 1 / 144 * 1000);
 
 	settings.add("create"); // Create icon
 	settings.add("update"); // Update icon
