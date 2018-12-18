@@ -11,6 +11,8 @@ class State {
 		this.icons = [];
 		this.dragSelection = null;
 		this.selection = null;
+		this.prevFrameTime = 0;
+		this.changed = true;
 		MicroEvent.mixin(this);
 		const state = this;
 
@@ -28,9 +30,11 @@ class State {
 				const halfSize = dragSelection.getSize() / 2;
 				dragSelection.setPosition(e.offsetX - halfSize, e.offsetY - halfSize);
 				state.dragSelection = null;
+				this.changed = true;
 				this.trigger("move-stop", dragSelection);
 			} else if (e.button === 2) { // Right click
 				state.selection = state.getSelection(e.offsetX, e.offsetY);
+				this.changed = true;
 				state.setSelection(state.selection);
 			}
 		});
@@ -40,6 +44,7 @@ class State {
 			if (dragSelection !== null) {
 				const halfSize = dragSelection.getSize() / 2;
 				dragSelection.setPosition(e.offsetX - halfSize, e.offsetY - halfSize);
+				this.changed = true;
 			}
 		});
 		// Mobile
@@ -49,6 +54,7 @@ class State {
 
 			state.dragSelection = state.getSelection(x, y);
 			state.setSelection(state.dragSelection);
+			this.changed = true;
 			this.trigger("move-start", state.dragSelection);
 		});
 
@@ -56,6 +62,7 @@ class State {
 			if (state.dragSelection) {
 				state.dragSelection = null;
 				e.preventDefault();
+				this.changed = true;
 			}
 		});
 
@@ -66,6 +73,7 @@ class State {
 				const y = e.touches[0].clientY - e.target.offsetTop;
 				const halfSize = dragSelection.getSize() / 2;
 				dragSelection.setPosition(x - halfSize, y - halfSize);
+				this.changed = true;
 				e.preventDefault();
 			}
 		});
@@ -94,6 +102,9 @@ class State {
 	}
 
 	draw() {
+		if (!this.changed) {
+			return;
+		}
 		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 		if (this.map.complete) {
 			this.context.drawImage(this.map, 0, 0);
@@ -105,6 +116,7 @@ class State {
 			}
 			icon.draw(this.context);
 		});
+		this.changed = false;
 	}
 
 	drawSelectionCircle(icon) {
@@ -132,6 +144,7 @@ class State {
 		this.map = image;
 		this.mapCallback = () => {
 			this.refreshSize();
+			this.changed = true;
 		};
 		image.addEventListener("load", this.mapCallback);
 		this.refreshSize();
@@ -158,14 +171,17 @@ class State {
 	refreshSize() {
 		this.canvas.width = this.getMap().width;
 		this.canvas.height = this.getMap().height;
+		this.changed = true;
 	}
 
 	exportPNG() {
 		const selection = this.selection;
 		this.selection = null;
+		this.changed = true;
 		this.draw();
 		const url = this.canvas.toDataURL("image/png");
 		this.selection = selection;
+		this.changed = true;
 		this.draw();
 		return url;
 	}
