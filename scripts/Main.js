@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	setInterval(() => {
 		state.draw();
-	}, 1 / 60);
+	}, 1 / 60 * 100);
 
 	settings.add("create"); // Create icon
 	settings.add("update"); // Update icon
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		icon.setBackgroundEnabled(this.getValue("enable-background"));
 		state.addIcon(icon);
 		settings.setValue("name", "");
+		state.changed = true;
 	});
 
 	settings.setAction("update", "click", function() {
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			state.selection.getSprite().setSpriteImage(newSprite);
 			state.selection.setSize(this.getValue("icon-size"));
 			state.selection.setBackgroundEnabled(this.getValue("enable-background"));
+			state.changed = true;
 		}
 	});
 
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (state.selection) {
 			state.removeIcon(state.selection);
 			state.setSelection(null);
+			state.changed = true;
 		}
 	});
 
@@ -65,18 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (e.keyCode === 46 && state.selection) {
 			state.removeIcon(state.selection);
 			state.setSelection(null);
+			state.changed = true;
 		}
 	});
 
 	settings.setAction("clear", "click", function() {
 		state.icons = [];
 		state.setSelection(null);
+		state.changed = true;
 	});
 
 	settings.setAction("map", "change", function() {
 		const map = state.getMap();
 		const url = this.getValue("map");
 		map.src = `maps/${url}.png`;
+		state.changed = true;
 	});
 
 	state.bind("map-change", (map) => {
