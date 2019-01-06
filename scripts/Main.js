@@ -28,10 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	settings.add("icon-size"); // Icon size
 	settings.add("export"); // Export link
 	settings.add("export-image"); // Export as image
-	settings.add("export-file");
+	settings.add("export-file"); // Export as image and download to file
 	settings.add("map-select", "map"); // Map to use as a background
 	settings.add("locale"); // Locale select
-	settings.add("enable-background");
+	settings.add("enable-background"); // Toggle icon background
+	settings.add("import-addon");
 
 	settings.setAction("create", "click", function() {
 		const spriteId = parseInt(this.getValue("icon"), 10);
@@ -133,6 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	settings.setAction("export-file", "click", function() {
 		const png = state.exportPNG();
 		FileSaver.saveAs(png, "raidmap.png");
+	});
+
+	settings.setAction("import-addon", "click", function() {
+		let array = prompt("Paste here");
+		array = JSON.parse(array);
+		state.importAddon(array, parseInt(this.getValue("icon-size"), 10));
 	});
 
 	function importFromHash() {

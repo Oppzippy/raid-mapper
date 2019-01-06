@@ -219,9 +219,8 @@ class State {
 
 	importJSON(json) {
 		const icons = [];
-		const self = this;
 		json.icons.forEach((icon) => {
-			const spriteImage = self.spritePackage.getSpriteImage(icon.sprite);
+			const spriteImage = this.spritePackage.getSpriteImage(icon.sprite);
 			if (spriteImage) {
 				const sprite = new Sprite(spriteImage);
 				const ico = new ClassIcon(sprite, icon.name);
@@ -240,6 +239,28 @@ class State {
 	importString(string) {
 		const decompressed = pako.inflate(atob(string), { to: "string" });
 		this.importJSON(JSON.parse(decompressed));
+	}
+
+	importAddon(units, size) {
+		let xPos = 0;
+		let yPos = 0;
+		units.forEach((unit) => {
+			const spriteImage = this.spritePackage.getSpriteImage(unit.sprite);
+			if (spriteImage) {
+				const sprite = new Sprite(spriteImage);
+				const icon = new ClassIcon(sprite, unit.name);
+				icon.setPosition(xPos, yPos);
+				xPos += size * 2;
+				if (xPos - size >= this.canvas.width) {
+					xPos = 0;
+					yPos += size * 2;
+				}
+				icon.setSize(size);
+				icon.setBackgroundEnabled(true);
+				this.addIcon(icon);
+			}
+		});
+		this.changed = true;
 	}
 }
 

@@ -42,6 +42,7 @@ $LOCALE['enUS'] = [
 	'enable-background' => 'Enable Background',
 	'instructions_move' => 'Click and drag to move icons.',
 	'instructions_select' => 'Right click an icon to select it. The icon can then be modified or deleted.',
+	'import-addon' => 'Import from Addon',
 	'uldir_1' => 'Ruin\'s Descent',
 	'uldir_2' => 'Hall of Sanitation',
 	'uldir_3' => 'Ring of Containment',

@@ -14,6 +14,9 @@
 		<input type="button" id="export-file" value="<?= $locale->get('export-file') ?>">
 	</div>
 	<div class="setting">
+		<input type="button" id="import-addon" value="<?= $locale->get('import-addon') ?>">
+	</div>
+	<div class="setting">
 		<label for="map-select"><?= $locale->get('map') ?></label>
 		<select id="map-select">
 			<?php for ($i = 1; $i <= 10; $i++): ?>
